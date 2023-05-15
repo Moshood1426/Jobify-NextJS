@@ -22,14 +22,13 @@ const Navbar: React.FC<NavBarProps> = ({ user }) => {
         <button
           type="button"
           className={classes.toggle_btn}
-          onClick={toggleSidebar}
+          onClick={() => toggleSidebar()}
         >
           <FaAlignLeft />
         </button>
         <div>
-          {/* <div className={classes.logo}> */}
           <Logo logoStyle={classes.logo} />
-          {/* </div> */}
+
           <h3 className={classes.logo_text}>dashboard</h3>
         </div>
         <div className={classes.btn_container}>

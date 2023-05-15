@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useContext, createContext, useReducer } from "react";
 import { Action, ContextType, InitialState } from "./types/context";
@@ -20,8 +20,14 @@ const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     dispatch({ type: ActionType.TOGGLE_SIDE_BAR });
   };
 
+  const setEditJob = () => {};
+
+  const deleteJob = () => {};
+
   return (
-    <AppContext.Provider value={{ ...state, toggleSidebar }}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ ...state, toggleSidebar, setEditJob, deleteJob }}>
+      {children}
+    </AppContext.Provider>
   );
 };
 
