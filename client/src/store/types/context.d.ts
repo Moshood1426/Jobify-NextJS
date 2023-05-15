@@ -4,7 +4,9 @@ export interface InitialState {
   showSidebar: boolean;
 }
 
-export interface ContextType extends InitialState {}
+export interface ContextType extends InitialState {
+  toggleSidebar: () => void;
+}
 
 export interface Action {
   type: ActionType;

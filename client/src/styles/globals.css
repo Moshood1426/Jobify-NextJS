@@ -75,6 +75,8 @@ body {
   font-weight: 400;
   line-height: 1.75;
   color: var(--textColor);
+  margin: 0;
+  padding: 0;
 }
 
 p {

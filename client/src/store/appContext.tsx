@@ -1,6 +1,9 @@
+'use client';
+
 import { useContext, createContext, useReducer } from "react";
 import { Action, ContextType, InitialState } from "./types/context";
 import reducer from "./reducer";
+import ActionType from "./action";
 
 const initialState: InitialState = {
   showSidebar: false,
@@ -13,8 +16,12 @@ const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     React.Reducer<typeof initialState, Action>
   >(reducer, initialState);
 
+  const toggleSidebar = () => {
+    dispatch({ type: ActionType.TOGGLE_SIDE_BAR });
+  };
+
   return (
-    <AppContext.Provider value={{ ...state }}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ ...state, toggleSidebar }}>{children}</AppContext.Provider>
   );
 };
 
