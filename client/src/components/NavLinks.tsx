@@ -17,18 +17,18 @@ const NavLinks: React.FC<NavLinksProps> = ({
   icon,
 }) => {
   const pathname = usePathname();
-
   const { toggleSidebar } = useAppContext();
+  const regexTest = new RegExp(pathname, "i");
 
   return (
     <div className={nav_links}>
       {links.map((link) => {
-        const isActive = pathname.startsWith(link.path);
         const { text, path, id, icon: iconItem } = link;
+        const isActive = regexTest.test(path);
 
         return (
           <Link
-            href={path}
+            href={`/dashboard/${path}`}
             key={id}
             onClick={() => toggleSidebar()}
             className={isActive ? `${nav_link} ${active}` : nav_link}

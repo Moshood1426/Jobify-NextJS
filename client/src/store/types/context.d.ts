@@ -6,8 +6,8 @@ export interface InitialState {
 
 export interface ContextType extends InitialState {
   toggleSidebar: () => void;
-  setEditJob: () => void;
-  deleteJob: () => void;
+  setEditJob: (id: string) => void;
+  deleteJob: (id: string) => void;
 }
 
 export interface Action {

@@ -20,12 +20,14 @@ const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     dispatch({ type: ActionType.TOGGLE_SIDE_BAR });
   };
 
-  const setEditJob = () => {};
+  const setEditJob = (id: string) => {};
 
-  const deleteJob = () => {};
+  const deleteJob = (id: string) => {};
 
   return (
-    <AppContext.Provider value={{ ...state, toggleSidebar, setEditJob, deleteJob }}>
+    <AppContext.Provider
+      value={{ ...state, toggleSidebar, setEditJob, deleteJob }}
+    >
       {children}
     </AppContext.Provider>
   );
